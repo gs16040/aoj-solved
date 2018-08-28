@@ -45,28 +45,9 @@ window.onload = function () {
 	var userData = [];
 	var userSolution = [];
 	var cnt = userId.length;
-	/*
-	cnt += userId.length;
-	for (var i in userId) {
-		var user = userId[i];
-		var request = new XMLHttpRequest();
-		request.open("GET", "https://judgeapi.u-aizu.ac.jp/users/" + user);
-		request.addEventListener("load", function (i) {
-			return function (event) {
-				var o = JSON.parse(event.target.responseText);
-				if (event.target.status === 200) {
-					userId[i] = o.id;
-					userData[i] = o;
-				}
-				if (0 === --cnt) {
-					done();
-				}
-			};
-		}(i));
-		request.withCredentials = true;
-		request.send();
-	}
-	*/
+	var percent = document.getElementById('percent');
+	var percentText = document.getElementById('percent-text');
+	percentText.innerHTML = 0.00;
 	for (var i in userId) {
 		var user = userId[i];
 		var request = new XMLHttpRequest();
@@ -74,7 +55,10 @@ window.onload = function () {
 		request.addEventListener("load", function (i) {
 			return function (event) {
 				userSolution[i] = JSON.parse(event.target.responseText);
-				if (0 === --cnt) {
+				--cnt;
+				percentText.innerHTML = 100 * (userId.length - cnt)/userId.length;
+				if (0 === cnt) {
+					percent.style.display = 'none';
 					done();
 				}
 			};
