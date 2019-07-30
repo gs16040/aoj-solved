@@ -69,14 +69,14 @@ window.onload = function () {
 	var courses = function (s) {
 		var a = s.split('_');
 		switch(a[0]){
-			case 'ITP1' : return '!1' + a[0] + (1000 + Number(a[1])) + a[2];
-			case 'ALDS1': return '!2' + a[0] + (1000 + Number(a[1])) + a[2];
-			case 'ITP2' : return '!3' + a[0] + (1000 + Number(a[1])) + a[2];
-			case 'DSL'  : return '!4' + a[0] + (1000 + Number(a[1])) + a[2];
-			case 'DPL'  : return '!5' + a[0] + (1000 + Number(a[1])) + a[2];
-			case 'GRL'  : return '!6' + a[0] + (1000 + Number(a[1])) + a[2];
-			case 'CGL'  : return '!7' + a[0] + (1000 + Number(a[1])) + a[2];
-			case 'NTL'  : return '!8' + a[0] + (1000 + Number(a[1])) + a[2];
+			case 'ITP1' : return '!'+(1000+Number(a[1]))+a[2];
+			case 'ALDS1': return '!'+(2000+Number(a[1]))+a[2];
+			case 'ITP2' : return '!'+(3000+Number(a[1]))+a[2];
+			case 'DSL'  : return '!'+(4000+Number(a[1]))+a[2];
+			case 'DPL'  : return '!'+(5000+Number(a[1]))+a[2];
+			case 'GRL'  : return '!'+(6000+Number(a[1]))+a[2];
+			case 'CGL'  : return '!'+(7000+Number(a[1]))+a[2];
+			case 'NTL'  : return '!'+(8000+Number(a[1]))+a[2];
 			default: return s;
 		}
 	};
