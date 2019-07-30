@@ -101,12 +101,7 @@ window.onload = function () {
 		data.sort(function (a, b) {
 			a = courses(a[0]);
 			b = courses(b[0]);
-			if (a < b) {
-				return -1;
-			} else if (a > b) {
-				return 1;
-			}
-			return 0;
+			return a<b?-1:a>b?1:0;
 		});
 		makeTable(data, "table", userId.length + 1);
 	};
