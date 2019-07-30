@@ -7,7 +7,8 @@ function makeTable(data, tableId, W) {
 			var cell = rows[i].insertCell(-1);
 			if (j === 0) {
 				var aTag = document.createElement("a");
-				aTag.href = "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=" + data[i][0] + "&lang=jp";
+				//"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=" + data[i][0] + "&lang=jp";
+				aTag.href = "https://onlinejudge.u-aizu.ac.jp/problems/" + data[i][0];
 				aTag.target = "_blank";
 				aTag.appendChild(document.createTextNode(data[i][j]));
 				cell.appendChild(aTag);
