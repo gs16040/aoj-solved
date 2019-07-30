@@ -66,9 +66,19 @@ window.onload = function () {
 		request.withCredentials = true;
 		request.send();
 	}
-	var changeITP = function (s) {
+	var courses = function (s) {
 		var a = s.split('_');
-		return '!' + a[0] + (100 + Number(a[1])) + a[2];
+		switch(a[0]){
+			case 'ITP1' : return '!1' + a[0] + (1000 + Number(a[1])) + a[2];
+			case 'ALDS1': return '!2' + a[0] + (1000 + Number(a[1])) + a[2];
+			case 'ITP2' : return '!3' + a[0] + (1000 + Number(a[1])) + a[2];
+			case 'DSL'  : return '!4' + a[0] + (1000 + Number(a[1])) + a[2];
+			case 'DPL'  : return '!5' + a[0] + (1000 + Number(a[1])) + a[2];
+			case 'GRL'  : return '!6' + a[0] + (1000 + Number(a[1])) + a[2];
+			case 'CGL'  : return '!7' + a[0] + (1000 + Number(a[1])) + a[2];
+			case 'NTL'  : return '!8' + a[0] + (1000 + Number(a[1])) + a[2];
+			default: return s;
+		}
 	};
 	var done = function () {
 		var problems = {};
@@ -89,8 +99,8 @@ window.onload = function () {
 			data.push(problems[pid]);
 		}
 		data.sort(function (a, b) {
-			a = a[0].substr(0, 3) === 'ITP' ? changeITP(a[0]) : a[0];
-			b = b[0].substr(0, 3) === 'ITP' ? changeITP(b[0]) : b[0];
+			a = courses(a[0]);
+			b = courses(b[0]);
 			if (a < b) {
 				return -1;
 			} else if (a > b) {
