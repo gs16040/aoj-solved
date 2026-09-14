@@ -11,7 +11,7 @@ function makeTable(data, tableId, W) {
 				aTag.target = "_blank";
 				aTag.appendChild(document.createTextNode(data[i][j]));
 				var aTag2 = document.createElement("a");
-				aTag2.href = "https://onlinejudge.u-aizu.ac.jp/onlinejudge/description.jsp?id=" + data[i][0] + "&lang=jp";
+				aTag2.href = "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=" + data[i][0] + "&lang=jp";
 				aTag2.target = "_blank";
 				aTag2.appendChild(document.createTextNode("v1"));
 				cell.appendChild(aTag);
