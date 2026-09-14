@@ -7,11 +7,11 @@ function makeTable(data, tableId, W) {
 			var cell = rows[i].insertCell(-1);
 			if (j === 0) {
 				var aTag = document.createElement("a");
-				aTag.href = "https://onlinejudge.u-aizu.ac.jp/api/problems/" + data[i][0];
+				aTag.href = "https://onlinejudge.u-aizu.ac.jp/problems/" + data[i][0];
 				aTag.target = "_blank";
 				aTag.appendChild(document.createTextNode(data[i][j]));
 				var aTag2 = document.createElement("a");
-				aTag2.href = "https://onlinejudge.u-aizu.ac.jp/api/onlinejudge/description.jsp?id=" + data[i][0] + "&lang=jp";
+				aTag2.href = "https://onlinejudge.u-aizu.ac.jp/onlinejudge/description.jsp?id=" + data[i][0] + "&lang=jp";
 				aTag2.target = "_blank";
 				aTag2.appendChild(document.createTextNode("v1"));
 				cell.appendChild(aTag);
